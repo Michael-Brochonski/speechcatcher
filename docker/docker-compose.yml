@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  speechcatcher:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: speechcatcher
+    volumes:
+      - speechcatcher_models:/app/models  # Named volume for model persistence
+      - ../media:/app/media   # Mount media files for transcription
+    ports:
+      - "2700:2700"  # WebSocket server port
+    # Default command shows help
+    command: "--help"
+    # Uncomment one of these lines to run in a specific mode
+    # command: "server --vosk-output-format --port 2700"  # Run as WebSocket server
+    # command: "/app/media/sample.mp4"  # Transcribe a file
+    # command: "-l"  # Live transcription from microphone (requires proper device mapping)
+
+volumes:
+  speechcatcher_models:
+    # Named volume for model persistence
+    # Models will persist even if container is removed 
