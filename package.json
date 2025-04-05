@@ -1,0 +1,23 @@
+{
+  "name": "speechcatcher-client",
+  "version": "1.0.0",
+  "description": "TypeScript WebSocket client for Speechcatcher",
+  "main": "dist/speechcatcher_client.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/speechcatcher_client.js"
+  },
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "mic": "^2.1.2",
+    "wav": "^1.0.2",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/argparse": "^2.0.15",
+    "@types/node": "^20.11.15",
+    "@types/wav": "^1.0.4",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.3.3"
+  }
+} 

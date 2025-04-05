@@ -18,7 +18,7 @@ docker-compose build
 docker-compose run --rm speechcatcher server --vosk-output-format
 
 # With additional parameters (recommended for proper network exposure)
-docker-compose run --rm -p 2700:2700 speechcatcher server --vosk-output-format --model de_streaming_transformer_xl --port 2700 --host 0.0.0.0
+docker-compose run --rm -p 2700:2700 speechcatcher server --vosk-output-format --model de_streaming_transformer_xl --port 2700 --host 0.0.0.0 --beamsize 5 --format wav --pool-size 2
 ```
 
 ### CLI Mode
