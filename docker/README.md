@@ -21,6 +21,13 @@ docker-compose run --rm speechcatcher server --vosk-output-format
 docker-compose run --rm -p 2700:2700 speechcatcher server --vosk-output-format --model de_streaming_transformer_xl --port 2700 --host 0.0.0.0  --beamsize 10 --format wav --pool-size 2
 ```
 
+### WebSocket Client Example
+
+```bash
+# Example using the Vosk test client with a media file
+python vosk_test_client.py media/common_voice_de_40865860.wav
+```
+
 ### CLI Mode
 
 To transcribe a media file (place your media files in the `media` directory at the project root):
