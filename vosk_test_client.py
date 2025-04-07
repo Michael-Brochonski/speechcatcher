@@ -33,7 +33,7 @@ def is_wav_compatible(wav_file, sample_rate, channels, bit_depth):
 async def process_audio(websocket, audio_stream, sample_rate, is_wave):
     await websocket.send(f'{{ "config" : {{ "sample_rate" : {sample_rate} }} }}')
     
-    buffer_size = int(sample_rate * 1.2)  # 0.2 seconds of audio
+    buffer_size = int(sample_rate * 1.2)  # 1.2 seconds of audio
     while True:
         if is_wave:
             data = audio_stream.readframes(buffer_size)  # For wave files
